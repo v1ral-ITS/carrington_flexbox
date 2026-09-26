@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- HTML5 identifies the document as a modern HTML page.
+     lang="en" tells assistive technology that the content is English. -->
+<html lang="en">
+
+<!-- The head holds page information rather than visible content.
+     UTF-8 supports text characters, viewport supports mobile sizing,
+     and the relative stylesheet path loads CSS from the css folder. -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barry Carrington | Flexbox Layout Showcase</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- The body contains everything visitors see and interact with. -->
+<body>
+
+  <!-- This keyboard-accessible link skips directly to the main content.
+       The #main-content fragment targets the element with that ID. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- The header introduces the page. The h1 is the main heading,
+       while the paragraph briefly describes the purpose of the demo. -->
+  <header class="page-header">
+    <h1>Flexbox Layout Showcase</h1>
+    <p>Three common layouts built with HTML and external CSS.</p>
+  </header>
+
+  <!-- Main identifies the primary content for assistive technology.
+       tabindex="-1" lets the skip link move focus here without adding
+       main to the normal Tab-key sequence. -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- Section 1 groups the navigation example under its own h2.
+         aria-labelledby connects this section to its visible heading. -->
+    <section class="showcase-section" aria-labelledby="nav-title">
+      <h2 id="nav-title">1. Nav Bar</h2>
+
+      <!-- Nav identifies a group of navigation links.
+           The logo and list are its two flex items, allowing CSS
+           to place the brand left and the navigation links right. -->
+      <nav class="navbar" aria-label="Showcase navigation">
+        <div class="logo">ITS</div>
+
+        <!-- An unordered list groups the three navigation choices.
+             Each fragment link moves to an existing ID on this page. -->
+        <ul class="navlinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#cards">Projects</a></li>
+          <li><a href="#reflection">Reflection</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Section 2 contains the hero example.
+         The inner div is a flex container that centers its headline
+         along both axes inside a box at least 300 pixels tall. -->
+    <section class="showcase-section" id="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">2. Centered Hero</h2>
+      <div class="hero">
+        <h3 class="hero-text">Build. Learn. Create.</h3>
+      </div>
+    </section>
+
+    <!-- Section 3 demonstrates a responsive collection of cards.
+         The card-row parent controls wrapping and spacing;
+         its four card divs are the individual flex items. -->
+    <section class="showcase-section" id="cards" aria-labelledby="cards-title">
+      <h2 id="cards-title">3. Responsive Card Row</h2>
+
+      <div class="card-row">
+
+        <!-- Each card groups a heading and related description.
+             An h3 makes the card a subsection of the section's h2. -->
+        <div class="card">
+          <h3>HTML</h3>
+          <p>Give a page clear structure with meaningful elements.</p>
+        </div>
+
+        <!-- This card describes CSS, the language responsible for
+             presentation such as colors, spacing, and layout. -->
+        <div class="card">
+          <h3>CSS</h3>
+          <p>Turn structured content into a readable, organized design.</p>
+        </div>
+
+        <!-- This card describes Flexbox, which arranges child elements
+             along a main axis and can wrap them onto additional lines. -->
+        <div class="card">
+          <h3>Flexbox</h3>
+          <p>Align navigation, center content, and create flexible rows.</p>
+        </div>
+
+        <!-- This card describes responsive design, meaning layouts
+             adapt to the available space on different screen sizes. -->
+        <div class="card">
+          <h3>Responsive Design</h3>
+          <p>Keep content usable on phones, tablets, and computers.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- This reflection area follows the three required examples.
+         Replace the draft paragraph with your own experience before
+         submitting; it must remain between 100 and 200 words. -->
+    <div class="reflection" id="reflection">
+      <h2>Reflection</h2>
+      <p>
+        The responsive card row was the hardest layout for me to understand
+        because the cards needed to share space on a wide screen and move
+        onto new rows on a narrow screen. I looked up how flex-wrap works
+        with the flex shorthand, especially how the starting size affects
+        when a card wraps. The navigation example helped me understand
+        that space-between separates the logo from the links, while
+        align-items keeps them vertically aligned. The hero showed me why
+        the container needs a minimum height for vertical centering to be
+        visible. Outside class, I have seen navigation bars on shopping
+        websites, centered hero headlines on software product homepages,
+        and responsive card rows in online project portfolios. These
+        examples helped me connect the CSS properties to layouts I
+        regularly use.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer identifies the closing information for the page.
+       &copy; is an HTML character reference for the copyright symbol. -->
+  <footer class="page-footer">
+    <p>&copy; 2026 Barry Carrington. Flexbox Layout Showcase.</p>
+  </footer>
+
+</body>
+</html>

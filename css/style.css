@@ -1,0 +1,256 @@
+/* The universal selector applies this sizing rule to every element.
+   border-box includes padding and borders inside an element's width,
+   making responsive layouts easier to size without overflow. */
+* {
+  box-sizing: border-box;
+}
+
+/* Body establishes the page's default appearance.
+   Margin removes browser spacing, padding adds an outer cushion,
+   and line-height: 1.6 gives text lines comfortable separation. */
+body {
+  margin: 0;
+  padding: 24px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f5f9;
+  color: #172033;
+  line-height: 1.6;
+}
+
+/* These three page regions share a maximum width.
+   width: 100% uses available space, max-width limits wide screens,
+   and automatic side margins center the regions horizontally. */
+.page-header,
+main,
+.page-footer {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The page header centers the introduction.
+   Its bottom margin separates the title from the first example. */
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* The main heading uses rem units, which scale with root font size.
+   A tighter line-height keeps a wrapped heading visually connected. */
+h1 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* Section headings establish a consistent visual hierarchy.
+   The bottom margin separates each heading from its example. */
+h2 {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+}
+
+/* Each showcase section separates one layout example from the next.
+   margin-bottom creates space outside the section. */
+.showcase-section {
+  margin-bottom: 32px;
+}
+
+/* The skip link is positioned above the visible page by default.
+   It lets keyboard users bypass introductory content when focused. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #172033;
+  z-index: 10;
+}
+
+/* Focus moves the skip link into view.
+   :focus matches the element currently receiving keyboard input. */
+.skip-link:focus {
+  top: 12px;
+}
+
+/* nav bar based on Nav Bar preset */
+/* The navbar is a flex container holding the logo and link list.
+   flex-direction: row arranges its children horizontally.
+   space-between pushes those children to opposite ends.
+   align-items: center aligns them vertically because the axis is a row.
+   gap provides minimum spacing between the two children. */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background-color: #172033;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+/* The logo is a text-based brand mark.
+   Bold weight and a larger font distinguish it from navigation links. */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* The navigation list is a second flex container.
+   Flex places its list items in a row and gap spaces them evenly.
+   Removing list-style, margin, and padding clears browser list defaults. */
+.navlinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation anchors stay white against the dark navigation bar.
+   inline-block lets vertical padding enlarge their clickable area.
+   Underlines make the links recognizable without relying on color. */
+.navlinks a {
+  display: inline-block;
+  padding: 8px 0;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Hover increases underline thickness to show pointer interaction.
+   The link remains readable against the same dark background. */
+.navlinks a:hover {
+  text-decoration-thickness: 3px;
+}
+
+/* Focus outlines show keyboard users which link is selected.
+   currentColor uses the link's own text color, keeping the outline
+   visible on both the white skip link and dark navigation bar. */
+a:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* The hero is a flex container based on the Perfect Center pattern.
+   With row direction, justify-content centers horizontally and
+   align-items centers vertically. min-height supplies vertical space
+   while allowing the box to grow if the text needs more room. */
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 24px;
+  background-color: #174ea6;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* The hero headline has no default heading margin.
+   clamp chooses a responsive size between 2rem and 3.5rem,
+   using 6vw as the preferred size relative to viewport width. */
+.hero-text {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.2;
+}
+
+/* The card row is a flex container based on the Card Row pattern.
+   flex-wrap: wrap permits additional rows when space runs out.
+   gap separates cards horizontally and vertically.
+   stretch makes cards on the same row share a common height. */
+.card-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Each card is a flex item with a preferred width of 240 pixels.
+   flex: 1 1 240px means it may grow, may shrink, and starts at 240px.
+   min-width: 0 allows shrinking below automatic content sizing.
+   Padding adds interior space; the border defines the card edge. */
+.card {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #64748b;
+  border-radius: 10px;
+  overflow-wrap: break-word;
+}
+
+/* Card headings use a dark blue accent with strong contrast.
+   Their margins create space below the heading without extra space above. */
+.card h3 {
+  margin: 0 0 12px;
+  color: #174ea6;
+  font-size: 1.2rem;
+}
+
+/* Card paragraphs remove their default margins.
+   This leaves the card's padding responsible for its outer text spacing. */
+.card p {
+  margin: 0;
+}
+
+/* The reflection is a separate reading area below the demonstrations.
+   A white background and internal padding visually group its content. */
+.reflection {
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Removing the reflection paragraph's margin avoids extra spacing
+   because its container and heading already supply that spacing. */
+.reflection p {
+  margin: 0;
+}
+
+/* The footer centers the author information.
+   Its top border and margin separate it from the main page content. */
+.page-footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #64748b;
+  text-align: center;
+}
+
+/* This media query applies when the viewport is 600px wide or less.
+   It adjusts spacing for phones while keeping the nav in one row
+   and making each card occupy a separate full-width row. */
+@media (max-width: 600px) {
+
+  /* Smaller navigation padding leaves more space for its contents
+     without changing the logo-left, links-right layout. */
+  .navbar {
+    padding: 12px;
+  }
+
+  /* Smaller gaps and text help all three links fit at 360px wide.
+     rem keeps the text responsive to the user's root font setting. */
+  .navlinks {
+    gap: 10px;
+    font-size: 0.875rem;
+  }
+
+  /* A 100% flex basis makes each card start at the row's full width.
+     Combined with flex-wrap, this stacks the cards on narrow screens. */
+  .card {
+    flex-basis: 100%;
+  }
+}
